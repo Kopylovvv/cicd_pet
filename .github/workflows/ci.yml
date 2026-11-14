@@ -5,4 +5,5 @@ jobs:
     steps:
       - run: echo "Hello, CI"
       - uses: actions/checkout@v6
+        name: file
       - run: ls -la
