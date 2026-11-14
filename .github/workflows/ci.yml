@@ -7,3 +7,5 @@ jobs:
       - uses: actions/checkout@v6
         name: file
       - run: ls -la
+      - run: python3 -m unittest
+        name: tests
