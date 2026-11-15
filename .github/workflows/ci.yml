@@ -29,4 +29,11 @@ jobs:
           mkdir release
           tar -xzf cicd-$GITHUB_SHA.tar.gz -C release
           ls release
-
+      - name: smoke test release
+        working-directory: release
+        run: |
+          python3 -c '
+          import calc
+          assert calc.add(10,-3) == 7
+          print("Smoke test passed")
+          '
