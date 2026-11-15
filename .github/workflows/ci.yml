@@ -8,7 +8,7 @@ jobs:
       - name: run tests
         run: python3 -m unittest
       - name: archive repo
-        run: git archive --format=tar.gz --output=cicd-$GITHUB_SHA.tar.gz "$GITHUB_SHA"
+        run: git archive --format=tar.gz --output=cicd-$GITHUB_SHA.tar.gz "$GITHUB_SHA" README.md
       - name: upload artifact
         uses: actions/upload-artifact@v7
         with:
@@ -34,6 +34,6 @@ jobs:
         run: |
           python3 -c '
           import calc
-          assert calc.add(10,-3) == 7
+          assert calc.add(10, -3) == 7
           print("Smoke test passed")
           '
