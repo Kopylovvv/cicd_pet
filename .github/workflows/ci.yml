@@ -1,11 +1,9 @@
 on: push
 jobs:
-  hello:
+  tests:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, CI"
-      - uses: actions/checkout@v6
-        name: file
-      - run: ls -la
-      - run: python3 -m unittest
-        name: tests
+      - name: checkout repo
+        uses: actions/checkout@v6
+      - name: run tests
+        run: python3 -m unittest
