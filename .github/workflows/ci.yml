@@ -8,7 +8,7 @@ jobs:
       - name: run tests
         run: python3 -m unittest
       - name: archive repo
-        run: git archive --format=tar.gz --output=cicd-$GITHUB_SHA.tar.gz "$GITHUB_SHA" README.md
+        run: git archive --format=tar.gz --output=cicd-$GITHUB_SHA.tar.gz "$GITHUB_SHA"
       - name: upload artifact
         uses: actions/upload-artifact@v7
         with:
