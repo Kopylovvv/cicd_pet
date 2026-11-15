@@ -24,3 +24,9 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: uploaded archive
+      - name: extract release
+        run: |
+          mkdir release
+          tar -xzf cicd-$GITHUB_SHA.tar.gz -C release
+          ls release
+
